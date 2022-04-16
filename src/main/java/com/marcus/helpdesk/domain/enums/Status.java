@@ -4,7 +4,7 @@ public enum Status {
 
 	ABERTO(0, "ROLE_BAIXA"),
 	ANDAMENTO(1, "ROLE_MEDIA"),
-	FECHADO(2, "ROLE_ALTA");
+	ENCERRADO(2, "ROLE_ALTA");
 	
 	private Integer codigo;
 	private String descricao;
