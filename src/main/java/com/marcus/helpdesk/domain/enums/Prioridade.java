@@ -2,9 +2,9 @@ package com.marcus.helpdesk.domain.enums;
 
 public enum Prioridade {
 
-	ABERTO(0, "ROLE_ABERTO"),
-	ANDAMENTO(1, "ROLE_ANDAMENTO"),
-	ENCERRADO(2, "ROLE_ENCERRADO");
+	BAIXA(0, "ROLE_ABERTO"),
+	MEDIA(1, "ROLE_ANDAMENTO"),
+	ALTA(2, "ROLE_ENCERRADO");
 	
 	private Integer codigo;
 	private String descricao;

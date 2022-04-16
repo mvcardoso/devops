@@ -2,9 +2,9 @@ package com.marcus.helpdesk.domain.enums;
 
 public enum Status {
 
-	BAIXA(0, "ROLE_BAIXA"),
-	MEDIA(1, "ROLE_MEDIA"),
-	ALTA(2, "ROLE_ALTA");
+	ABERTO(0, "ROLE_BAIXA"),
+	ANDAMENTO(1, "ROLE_MEDIA"),
+	FECHADO(2, "ROLE_ALTA");
 	
 	private Integer codigo;
 	private String descricao;
