@@ -12,18 +12,12 @@ import com.marcus.helpdesk.domain.enums.Perfil;
 import com.marcus.helpdesk.domain.enums.Prioridade;
 import com.marcus.helpdesk.domain.enums.Status;
 import com.marcus.helpdesk.repository.ChamadoRepository;
-import com.marcus.helpdesk.repository.ClienteRepository;
 import com.marcus.helpdesk.repository.PessoaRepository;
-import com.marcus.helpdesk.repository.TecnicoRepository;
 
 @Service
 public class DBService {
 
-	@Autowired
-	private TecnicoRepository tecnicoRepository;
-
-	@Autowired
-	private ClienteRepository clienteRepository;
+	
 
 	@Autowired
 	private ChamadoRepository chamadoRepository;
