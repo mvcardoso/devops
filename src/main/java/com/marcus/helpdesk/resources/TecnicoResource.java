@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,6 +27,8 @@ import com.marcus.helpdesk.services.TecnicoService;
 @RestController
 @RequestMapping(value = "/tecnicos")
 public class TecnicoResource {
+
+	private static final Logger LOG = LoggerFactory.getLogger(TecnicoResource.class);
 	
 	@Autowired
 	private TecnicoService service;
@@ -32,6 +36,7 @@ public class TecnicoResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<TecnicoDTO> findById(@PathVariable Integer id){
 		Tecnico obj = service.findById(id);
+		LOG.info("[TECNICO] > > > Capturando Tecnico pelo ID: "+ id);
 		return ResponseEntity.ok().body(new TecnicoDTO(obj));
 	}
 
@@ -39,6 +44,7 @@ public class TecnicoResource {
 	public ResponseEntity<List<TecnicoDTO>> findAll() {
 		List<Tecnico> list = service.findAll();
 		List<TecnicoDTO> listDTO = list.stream().map(obj -> new TecnicoDTO(obj)).collect(Collectors.toList());
+		LOG.info("[TECNICO] > > > Capturando todos tecnicos");
 		return ResponseEntity.ok().body(listDTO);
 	}
 	
