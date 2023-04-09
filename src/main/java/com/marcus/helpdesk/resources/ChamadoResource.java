@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,13 +27,15 @@ import com.marcus.helpdesk.services.ChamadoService;
 @RequestMapping(value = "/chamados")
 public class ChamadoResource {
 
+	private static final Logger LOG = LoggerFactory.getLogger(ChamadoResource.class);
+
 	@Autowired
 	private ChamadoService service;
 	
 	@GetMapping(value= "/{id}")
 	public ResponseEntity<ChamadoDTO> findById(@PathVariable Integer id){
 		Chamado obj = service.findById(id);
-		
+		LOG.info("[CHAMADO] > > > Capturando Chamado pelo ID: "+ id);
 		return ResponseEntity.ok().body(new ChamadoDTO(obj));
 	}
 	
@@ -39,6 +43,7 @@ public class ChamadoResource {
 	public ResponseEntity<List<ChamadoDTO>> findAll(){
 		List<Chamado> list = service.findAll();
 		List<ChamadoDTO> listDTO = list.stream().map(obj -> new ChamadoDTO(obj)).collect(Collectors.toList());
+		LOG.info("[CHAMADO] > > > Capturando todos chamados");
 		return ResponseEntity.ok().body(listDTO);
 	}
 	
