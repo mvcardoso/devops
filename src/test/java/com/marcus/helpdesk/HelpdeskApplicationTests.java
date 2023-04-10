@@ -9,5 +9,4 @@ class HelpdeskApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
