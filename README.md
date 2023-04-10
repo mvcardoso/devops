@@ -26,3 +26,6 @@ Papertrail
 
 Terraform + AWS
 ![](images/devops-aws-terraform.png)
+
+Build (Pipeline GitHub)
+![](images/devops_pipeline_github.png)
