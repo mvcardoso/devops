@@ -1,21 +1,13 @@
 package com.marcus.helpdesk;
 
-import java.util.Arrays;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.marcus.helpdesk.domain.Chamado;
-import com.marcus.helpdesk.domain.Cliente;
-import com.marcus.helpdesk.domain.Tecnico;
-import com.marcus.helpdesk.domain.enums.Perfil;
-import com.marcus.helpdesk.domain.enums.Prioridade;
-import com.marcus.helpdesk.domain.enums.Status;
-import com.marcus.helpdesk.repository.ChamadoRepository;
-import com.marcus.helpdesk.repository.ClienteRepository;
-import com.marcus.helpdesk.repository.TecnicoRepository;
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class HelpdeskApplication {
@@ -23,6 +15,14 @@ public class HelpdeskApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelpdeskApplication.class, args);
+	}
+
+	@Bean
+	public OpenAPI customOpenAPI(@Value("${springdoc.version}") String appVersion) {
+		return new OpenAPI()
+				.components(new Components())
+				.info(new Info().title("API Help Desk").version(appVersion)
+						.license(new License().name("Apache 2.0").url("http://springdoc.org")));
 	}
 
 

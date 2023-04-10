@@ -12,13 +12,7 @@ na pasta raiz do projeto.
 Prometheus: http://localhost:9090/ <br>
 Grafana: http://localhost:3000/ <br>
 
-Endpoints
-
-[GET] /tecnicos -> Lista todos os tecnicos cadastrados<br>
-[GET] /chamados -> Lista todos os chamados cadastrados<br>
-
-[GET] /tecnicos/{id} -> Captura tecnico por ID<br>
-[GET] /chamados/{id} -> Captura chamado por ID<br>
+Swagger: http://localhost:8080/swagger-ui.html
 
 #Print's
 
